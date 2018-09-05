@@ -30,20 +30,20 @@ function moviethis(input) {
     request(queryURL, function (err, resp, body) {
         if (!err && resp.statusCode === 200) {
             let dabody = JSON.parse(body);
-            console.log(dabody.Title);
-            console.log(dabody.Year);
-            console.log(dabody.imdbRating);
+            console.log("Movie name:" + " " + dabody.Title);
+            console.log("Movie release date:" + " " + dabody.Year);
+            console.log("imdb Rating:" + " " + dabody.imdbRating);
 
             for (let i = 0; i < dabody.Ratings.length; i++) {
                 if (dabody.Ratings[i].Source === "Rotten Tomatoes") {
-                    console.log(dabody.Ratings[i].Value);
+                    console.log("Rotten Tomatoes Rating:" + " " + dabody.Ratings[i].Value);
                 }
             }
 
-            console.log(dabody.Country);
-            console.log(dabody.Language);
-            console.log(dabody.Plot);
-            console.log(dabody.Actors);
+            console.log("Country:" + " " + dabody.Country);
+            console.log("Language:" + " " + dabody.Language);
+            console.log("Movie Plot:" + " " + dabody.Plot);
+            console.log("Actors:" + " " + dabody.Actors);
         }
 
     });
